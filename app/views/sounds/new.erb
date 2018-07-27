@@ -1,0 +1,16 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+<h4>Add sound:</h4>
+<form action="/sounds" method="POST" enctype="multipart/form-data">
+  <label for="name">New Sound Name(do not use special characters): </label>
+  <input type="text" name="name" id="name">
+  <label form="description">Sound Description: </label>
+  <input type="text" name="description" id="description"><br>
+
+  Upload Sound: <br>
+  <form action="/sounds" method="POST" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit" value="Upload Sound">
+      </form>
+</form>
