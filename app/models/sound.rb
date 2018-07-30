@@ -23,7 +23,7 @@ class Sound < ActiveRecord::Base
   def file=(file_hash)
     filename = file_hash[:filename]
     file = file_hash[:tempfile]
-    File.open("./public/#{@filename}", 'wb') do |f|
+    File.open("./public/#{filename}", 'wb') do |f|
       f.write(file.read)
     end
     self.filename = filename
